@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alynilk Bakery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1>Alynilk Bakery 𐙚🍰🎂🧁𐙚</h1>
+            <nav>
+                <ul>
+                    <li><a href="#beranda" onclick="showSection('beranda')">Beranda</a></li>
+                    <li><a href="#menu" onclick="showSection('menu')">Menu</a></li>
+                    <li><a href="#pesan" onclick="showSection('pesan')">Pesan atau Beli sekarang</a></li>
+                    <li><a href="#contact" onclick="showSection('contact')">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="beranda" class="info-section">
+            <img src="jk.png" width="500" height="500" alt="Gambar Beranda">
+        </section>
+        <section id="menu" class="info-section hidden">
+            <h2>Menu Kue</h2>
+            <div class="cake-grid">
+                <div class="cake-item">
+                    
+                    <img src="Cakes!.jpeg" width="200px" height="200px" alt="Strawberry Cake">
+                    <h3>Strawberry Cake</h3>
+                    <p>Kue rasa Strawberry yang istimewa</p>
+                    <p>Harga: Rp 550.000</p>
+                </div>
+                <div class="cake-item">
+                    <img src="green.jpeg" width="80px" height="80px" alt="Greentea Cake">
+                    <h3>Greentea Cake</h3>
+                    <p>Halus dengan rasa Greentea yang lembut.</p>
+                    <p>Harga: Rp 430.000</p>
+                </div>
+                <div class="cake-item">
+                    <img src="aoa.jpeg" width="200px" height="200px" alt="Red Velvet Cake">
+                    <h3>Red velvet Cake</h3>
+                    <p>Kue merah lezat.</p>
+                    <p>Harga: Rp 770.000</p>
+                </div>
+                <div class="cake-item">
+                    <img src="sn.jpeg" width="100px" height="100px" alt="Grape Cake">
+                    <h3>Grape Cake</h3>
+                    <p>lezat dan menarik.</p>
+                    <p>Harga: Rp 280.000</p>
+                </div>
+                <div class="cake-item">
+                    <img src="hh.jpeg" width="200px" height="200px" alt="Blueberry Cake">
+                    <h3>Blueberry Cake</h3>
+                    <p>Halus dengan rasa selai Blueberry yang lembut</p>
+                    <p>Harga: Rp 470.000</p>
+                </div>
+                <div class="cake-item">
+                    <img src="oreo.jpeg" width="200px" height="200px" alt="Oreo Cake">
+                    <h3>Oreo Cake</h3>
+                    <p>Kue rasa oreo dengan perpaduan rasa oreo dan vanila</p>
+                    <p>Harga: Rp 470.000</p>
+                </div>
+            </div>
+            <style>
+    .cake-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cake-item {
+    text-align: center;
+}
+
+.cake-item img {
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cake-item img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.cake-item img:active {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    transform: scale(0.98);
+}
+
+.cake-item h2 {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #333;
+}
+            </style>
+        </section>
+        <section id="pesan" class="info-section hidden">
+            <h2>Isi Data untuk Pemesanan</h2>
+            <p>Silakan isi data di bawah ini untuk memesan kue favorit Anda</p>
+            <form id="orderForm">
+                <label for="nama">Nama :</label>
+                <input type="text" id="nama" name="nama" required>
+                <label for="alamat">Alamat:</label>
+                <textarea id="alamat" name="alamat" rows="3" required></textarea>
+                <label for="nomorWa">Nomor telepon:</label>
+                <input type="tel" id="nomorWa" name="nomorWa" pattern="[0-9]{10,13}" required>
+                <label for="RasaCake">Rasa Cake:</label>
+                <select id="RasaCake" name="RasaCake" required>
+                    <option value="Strawberry Cake">Strawberry Cake</option>
+                    <option value="Greentea Cake">Greentea Cake</option>
+                    <option value="Red Velvet Cake">Red Velvet Cake</option>
+                    <option value="Grape Cake">Grape Cake</option>
+                    <option value="Blueberry cake">Blueberry Cake</option>
+                    <option value="Oreo Cake">Oreo Cake</option>
+                </select>
+                <label for="jenisPesanan">Jenis Pesanan:</label>
+                <select id="jenisPesanan" name="jenisPesanan" required>
+                    <option value="sekarang">Pesan Sekarang</option>
+                    <option value="nanti">Pesan untuk Nanti</option>
+                </select>
+                <button type="button" onclick="submitOrder()">Kirim Pesanan</button>
+            </form>
+        </section>
+        <section id="contact" class="info-section hidden">
+            <h2>Kontak Kami</h2>
+            <p>Hubungi kami untuk informasi lebih lanjut:</p>
+            <p><strong>Telepon:</strong> (021) 123-4567</p>
+            <p><strong>Email:</strong> info@Alynilkbakery.ac.id</p>
+            <ul>
+                <li>Instagram: @Alynilkbakery</li>
+                <li>Facebook: Alynilkbakery</li>
+                <li>Twitter: @Alynilk_bakery</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Alynilk Bakery 🍰🎂🧁. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

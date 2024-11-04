@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('pi.jpeg');
+    background-size: cover;
+    background-attachment: fixed;
+    color: #333;
+}
+
+.navbar {
+    background-color: #f994d2;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar h1 {
+    font-size: 1.8em;
+}
+
+.navbar nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 15px;
+}
+
+.navbar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+
+.navbar nav ul li a:hover {
+    color: #e00a8b;
+}
+
+main {
+    text-align: center;
+    margin: 20px;
+}
+
+.info-section {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    text-align: center;
+    font-size: 12px;
+    color: #0b0b0b;
+}
+
+.cake-item {
+    transition: transform 0.4s ease-in-out;
+    margin-top: 20px;
+}
+
+.cake-item:hover {
+    transform: scale(1.05);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .navbar nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .navbar h1 {
+        font-size: 1.5em;
+    }
+    .navbar nav ul li a {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar h1 {
+        font-size: 1.2em;
+    }
+    .navbar {
+        padding: 10px;
+    }
+    .navbar nav ul {
+        flex-direction: column;
+    }
+    .navbar nav ul li a {
+        font-size: 0.9em;
+    }
+    .info-section {
+        padding: 15px;
+        width: 95%;
+    }
+    .cake-item img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Link button styling */
+.navbar nav ul li a:link, .navbar nav ul li a:visited {
+    color: white;
+    background-color: #f994d2;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.navbar nav ul li a:hover, .navbar nav ul li a:active {
+    background-color: #e00a8b;
+}
